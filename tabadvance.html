@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Tab Advance</title>
-
-  <link rel="icon" href="favicon.ico">
-</head>
-
-<head>
     <meta charset="utf-8">
     <title>Tab Advance Special Tab</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico">
+
     <style>
         /* === EASY POSITION EDIT ===
-           Change --text-vertical-position to move the text vertically (0% = top, 50% = middle, 100% = bottom)
+           Change --text-vertical-position to move the text vertically
+           (0% = top, 50% = middle, 100% = bottom)
         */
         :root {
-            --text-vertical-position: 5%; /* Change this value to adjust vertical position */
+            --text-vertical-position: 5%;
         }
 
         body {
@@ -24,10 +22,10 @@
             height: 100vh;
             display: flex;
             flex-direction: column;
-            align-items: center;       /* horizontal centering */
-            justify-content: flex-start; /* vertical alignment controlled by container */
-            background-color: #1e1e1e; /* fallback dark background */
-            background-image: url('9fa5c4e0-5f22-419e-b2eb-a3494520f5f2.avif'); /* background image */
+            align-items: center;
+            justify-content: flex-start;
+            background-color: #1e1e1e;
+            background-image: url('9fa5c4e0-5f22-419e-b2eb-a3494520f5f2.avif');
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -36,9 +34,9 @@
 
         #container {
             text-align: center;
-            margin-top: var(--text-vertical-position); /* vertical position */
+            margin-top: var(--text-vertical-position);
             padding: 20px 40px;
-            background-color: rgba(0,0,0,0.2); /* semi-transparent overlay */
+            background-color: rgba(0,0,0,0.2);
             border-radius: 12px;
         }
 
@@ -54,31 +52,30 @@
             margin: 5px 0;
             color: #f0f0f0;
             padding: 20px 40px;
-			text-shadow: 0 0 3px rgba(0,0,0,0.7);
+            text-shadow: 0 0 3px rgba(0,0,0,0.7);
         }
     </style>
 </head>
+
 <body>
     <div id="container">
         <h1 id="greeting"></h1>
 
-        <!-- === Custom lines: edit these directly === -->
         <div class="line"></div>
         <div class="line">Please wait . . . . . . .</div>
         <div class="line"></div>
-
     </div>
 
     <script>
-        // === Greeting based on current time ===
         const now = new Date();
         const hour = now.getHours();
         let greet = "Hello";
+
         if (hour < 12) greet = "Good Morning";
         else if (hour < 18) greet = "Good Afternoon";
         else greet = "Good Evening";
 
-        const name = "Dave"; // change your name here
+        const name = "Dave";
         document.getElementById("greeting").textContent = `${greet}, ${name}`;
     </script>
 </body>
