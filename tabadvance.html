@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Tab Advance Special Tab</title>
+    <style>
+        /* === EASY POSITION EDIT ===
+           Change --text-vertical-position to move the text vertically (0% = top, 50% = middle, 100% = bottom)
+        */
+        :root {
+            --text-vertical-position: 5%; /* Change this value to adjust vertical position */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;       /* horizontal centering */
+            justify-content: flex-start; /* vertical alignment controlled by container */
+            background-color: #1e1e1e; /* fallback dark background */
+            background-image: url('9fa5c4e0-5f22-419e-b2eb-a3494520f5f2.avif'); /* background image */
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            font-family: sans-serif;
+        }
+
+        #container {
+            text-align: center;
+            margin-top: var(--text-vertical-position); /* vertical position */
+            padding: 20px 40px;
+            background-color: rgba(0,0,0,0.2); /* semi-transparent overlay */
+            border-radius: 12px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #f0f0f0;
+            text-shadow: 0 0 5px rgba(0,0,0,0.7);
+        }
+
+        .line {
+            font-size: 1.2em;
+            margin: 5px 0;
+            color: #f0f0f0;
+            padding: 20px 40px;
+			text-shadow: 0 0 3px rgba(0,0,0,0.7);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1 id="greeting"></h1>
+
+        <!-- === Custom lines: edit these directly === -->
+        <div class="line">Welcome to Tab Advance!</div>
+        <div class="line">This tab is currently active.</div>
+        <div class="line">It will automatically advance after the configured delay.</div>
+
+    </div>
+
+    <script>
+        // === Greeting based on current time ===
+        const now = new Date();
+        const hour = now.getHours();
+        let greet = "Hello";
+        if (hour < 12) greet = "Good Morning";
+        else if (hour < 18) greet = "Good Afternoon";
+        else greet = "Good Evening";
+
+        const name = "Dave"; // change your name here
+        document.getElementById("greeting").textContent = `${greet}, ${name}`;
+    </script>
+</body>
+</html>
